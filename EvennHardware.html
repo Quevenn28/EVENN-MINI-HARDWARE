@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evenn Mini Hardware & Hollowblocks</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&family=Barlow+Condensed:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&family=Barlow+Condensed:wght@500;700;800;900&display=swap"
+    rel="stylesheet">
 
   <style>
     /* ============================================================
@@ -14,34 +17,42 @@
        Theme: Industrial Bold · Dark Steel · High-Voltage Energy
        ============================================================ */
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --red:        #d42020;
-      --red2:       #b01818;
-      --red3:       #ff3333;
-      --yellow:     #f5b800;
-      --yellow2:    #ffd040;
-      --yellow3:    #ffe680;
-      --dark:       #0a0c10;
-      --dark2:      #12151c;
-      --dark3:      #1a1f2a;
-      --steel:      #1e2530;
-      --steel2:     #252d3a;
-      --steel3:     #2e3848;
-      --blue:       #1a3a6b;
-      --blue2:      #0d2550;
-      --white:      #ffffff;
-      --off-white:  #f0f2f5;
-      --gray1:      #8a9ab0;
-      --gray2:      #c0ccd8;
-      --border:     rgba(245,184,0,0.2);
-      --ff-hero:    'Bebas Neue', sans-serif;
-      --ff-cond:    'Barlow Condensed', sans-serif;
-      --ff-body:    'Barlow', sans-serif;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --red: #d42020;
+      --red2: #b01818;
+      --red3: #ff3333;
+      --yellow: #f5b800;
+      --yellow2: #ffd040;
+      --yellow3: #ffe680;
+      --dark: #0a0c10;
+      --dark2: #12151c;
+      --dark3: #1a1f2a;
+      --steel: #1e2530;
+      --steel2: #252d3a;
+      --steel3: #2e3848;
+      --blue: #1a3a6b;
+      --blue2: #0d2550;
+      --white: #ffffff;
+      --off-white: #f0f2f5;
+      --gray1: #8a9ab0;
+      --gray2: #c0ccd8;
+      --border: rgba(245, 184, 0, 0.2);
+      --ff-hero: 'Bebas Neue', sans-serif;
+      --ff-cond: 'Barlow Condensed', sans-serif;
+      --ff-body: 'Barlow', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: var(--ff-body);
@@ -51,29 +62,34 @@
     }
 
     /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--dark2); }
-    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 99px; }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--dark2);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--red);
+      border-radius: 99px;
+    }
 
     /* ══════════════════════════════════════════════
        HAZARD STRIPE UTILITY
        ══════════════════════════════════════════════ */
     .hazard {
       height: 8px;
-      background: repeating-linear-gradient(
-        -45deg,
-        var(--yellow) 0px, var(--yellow) 12px,
-        #111 12px, #111 24px
-      );
+      background: repeating-linear-gradient(-45deg,
+          var(--yellow) 0px, var(--yellow) 12px,
+          #111 12px, #111 24px);
     }
 
     .hazard-sm {
       height: 5px;
-      background: repeating-linear-gradient(
-        -45deg,
-        var(--yellow) 0px, var(--yellow) 8px,
-        #111 8px, #111 16px
-      );
+      background: repeating-linear-gradient(-45deg,
+          var(--yellow) 0px, var(--yellow) 8px,
+          #111 8px, #111 16px);
     }
 
     /* ══════════════════════════════════════════════
@@ -93,8 +109,15 @@
     }
 
     @keyframes ticker {
-      from { opacity: 0; transform: translateY(-100%); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ══════════════════════════════════════════════
@@ -111,7 +134,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.6);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
     }
 
     .nav-logo {
@@ -120,30 +143,46 @@
       gap: 12px;
     }
 
-    .nav-logo-icon img{
-  width: 55px;
-  height: 55px;
-  object-fit: contain;
-  display: block;
-  background: transparent;   
-  padding: 0;               
-  border-radius: 0;         
-  box-shadow: none;         
-}
+    .nav-logo-icon img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+      display: block;
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
 
 
-.nav-logo-icon{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .nav-logo-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     @keyframes wrench {
-      0%,100% { transform: rotate(0deg); }
-      20%      { transform: rotate(-25deg); }
-      40%      { transform: rotate(25deg); }
-      60%      { transform: rotate(-15deg); }
-      80%      { transform: rotate(0deg); }
+
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      20% {
+        transform: rotate(-25deg);
+      }
+
+      40% {
+        transform: rotate(25deg);
+      }
+
+      60% {
+        transform: rotate(-15deg);
+      }
+
+      80% {
+        transform: rotate(0deg);
+      }
     }
 
     .nav-logo-text {
@@ -190,32 +229,41 @@
     .nav-links a::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 16px; right: 16px;
+      bottom: 0;
+      left: 16px;
+      right: 16px;
       height: 2px;
       background: var(--yellow);
       transform: scaleX(0);
       transition: transform 0.2s;
     }
 
-    .nav-links a:hover { color: var(--yellow2); }
-    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-links a:hover {
+      color: var(--yellow2);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
 
     .nav-cta {
       background: var(--red);
       color: var(--white) !important;
       padding: 8px 20px !important;
       border-radius: 4px !important;
-      box-shadow: 0 0 14px rgba(212,32,32,0.5);
+      box-shadow: 0 0 14px rgba(212, 32, 32, 0.5);
       transition: all 0.2s !important;
     }
 
     .nav-cta:hover {
       background: var(--red3) !important;
       transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(212,32,32,0.7) !important;
+      box-shadow: 0 4px 20px rgba(212, 32, 32, 0.7) !important;
     }
 
-    .nav-cta::after { display: none !important; }
+    .nav-cta::after {
+      display: none !important;
+    }
 
     /* ══════════════════════════════════════════════
        HERO SECTION
@@ -235,15 +283,20 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(245,184,0,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,184,0,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(245, 184, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 184, 0, 0.04) 1px, transparent 1px);
       background-size: 60px 60px;
       animation: gridMove 20s linear infinite;
     }
 
     @keyframes gridMove {
-      0%   { transform: translateY(0); }
-      100% { transform: translateY(60px); }
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(60px);
+      }
     }
 
     /* Particle dots */
@@ -252,18 +305,20 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,208,64,0.6) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 70% 15%, rgba(255,208,64,0.5) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 85% 60%, rgba(255,80,80,0.5) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,208,64,0.4) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 10% 70%, rgba(255,208,64,0.3) 0%, transparent 100%),
-        radial-gradient(2px 2px at 90% 40%, rgba(255,208,64,0.4) 0%, transparent 100%);
+        radial-gradient(1.5px 1.5px at 20% 30%, rgba(255, 208, 64, 0.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 70% 15%, rgba(255, 208, 64, 0.5) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 85% 60%, rgba(255, 80, 80, 0.5) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 40% 80%, rgba(255, 208, 64, 0.4) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 10% 70%, rgba(255, 208, 64, 0.3) 0%, transparent 100%),
+        radial-gradient(2px 2px at 90% 40%, rgba(255, 208, 64, 0.4) 0%, transparent 100%);
     }
 
     /* Image panel */
     .hero-img-panel {
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 65%;
       overflow: hidden;
     }
@@ -282,7 +337,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(8,11,18,0.3) 0%, rgba(8,11,18,0.98) 100%);
+      background: linear-gradient(to bottom, rgba(8, 11, 18, 0.3) 0%, rgba(8, 11, 18, 0.98) 100%);
     }
 
     .hero-inner {
@@ -298,8 +353,8 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(212,32,32,0.2);
-      border: 1px solid rgba(212,32,32,0.5);
+      background: rgba(212, 32, 32, 0.2);
+      border: 1px solid rgba(212, 32, 32, 0.5);
       border-radius: 99px;
       padding: 5px 16px;
       font-family: var(--ff-cond);
@@ -314,15 +369,25 @@
 
     .hero-eyebrow::before {
       content: '';
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--yellow);
       animation: pulse 1.5s infinite;
     }
 
     @keyframes pulse {
-      0%,100% { opacity: 1; transform: scale(1); }
-      50%      { opacity: 0.4; transform: scale(0.8); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+      }
     }
 
     .hero-title {
@@ -338,7 +403,7 @@
       color: var(--red);
       -webkit-text-stroke: 2px var(--yellow);
       display: block;
-      filter: drop-shadow(0 0 30px rgba(212,32,32,0.6));
+      filter: drop-shadow(0 0 30px rgba(212, 32, 32, 0.6));
     }
 
     .hero-title .t-white {
@@ -374,8 +439,15 @@
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .btn {
@@ -398,13 +470,13 @@
     .btn-primary {
       background: var(--red);
       color: var(--white);
-      box-shadow: 0 4px 24px rgba(212,32,32,0.5);
+      box-shadow: 0 4px 24px rgba(212, 32, 32, 0.5);
     }
 
     .btn-primary:hover {
       background: var(--red3);
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(212,32,32,0.7);
+      box-shadow: 0 8px 32px rgba(212, 32, 32, 0.7);
     }
 
     .btn-outline {
@@ -425,7 +497,7 @@
       gap: 40px;
       margin-top: 60px;
       padding-top: 40px;
-      border-top: 1px solid rgba(245,184,0,0.2);
+      border-top: 1px solid rgba(245, 184, 0, 0.2);
       animation: fadeUp 0.7s 0.5s ease both;
       flex-wrap: wrap;
     }
@@ -468,8 +540,8 @@
       object-fit: cover;
       object-position: center;
       opacity: 0.5;
-      mask-image: linear-gradient(to left, rgba(0,0,0,0.9) 0%, transparent 70%);
-      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.9) 0%, transparent 70%);
+      mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.9) 0%, transparent 70%);
+      -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.9) 0%, transparent 70%);
     }
 
     /* ══════════════════════════════════════════════
@@ -514,7 +586,9 @@
       margin-bottom: 14px;
     }
 
-    .section-title .accent { color: var(--red); }
+    .section-title .accent {
+      color: var(--red);
+    }
 
     .section-desc {
       font-size: 16px;
@@ -543,7 +617,7 @@
     .featured-banner-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(8,11,18,0.95) 35%, rgba(8,11,18,0.4) 100%);
+      background: linear-gradient(90deg, rgba(8, 11, 18, 0.95) 35%, rgba(8, 11, 18, 0.4) 100%);
       display: flex;
       align-items: center;
       padding: 0 8%;
@@ -575,7 +649,9 @@
       margin-bottom: 16px;
     }
 
-    .fbo-title span { color: var(--yellow); }
+    .fbo-title span {
+      color: var(--yellow);
+    }
 
     .fbo-desc {
       font-size: 15px;
@@ -594,7 +670,9 @@
     .products-section::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 3px;
       background: linear-gradient(90deg, transparent, var(--yellow), transparent);
     }
@@ -607,7 +685,7 @@
 
     .product-card {
       background: var(--steel);
-      border: 1px solid rgba(245,184,0,0.12);
+      border: 1px solid rgba(245, 184, 0, 0.12);
       border-radius: 8px;
       overflow: hidden;
       transition: all 0.25s;
@@ -618,7 +696,9 @@
     .product-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 3px;
       background: var(--red);
       transform: scaleX(0);
@@ -627,12 +707,14 @@
     }
 
     .product-card:hover {
-      border-color: rgba(245,184,0,0.35);
+      border-color: rgba(245, 184, 0, 0.35);
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
     }
 
-    .product-card:hover::before { transform: scaleX(1); }
+    .product-card:hover::before {
+      transform: scaleX(1);
+    }
 
     .product-card-img {
       height: 160px;
@@ -649,7 +731,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(245,184,0,0.05) 0%, transparent 70%);
+      background: radial-gradient(circle at center, rgba(245, 184, 0, 0.05) 0%, transparent 70%);
     }
 
     .product-badge {
@@ -713,7 +795,7 @@
       width: 500px;
       height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(212,32,32,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(212, 32, 32, 0.06) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -736,14 +818,14 @@
       align-items: flex-start;
       padding: 20px;
       border-radius: 8px;
-      background: rgba(30,37,48,0.5);
-      border: 1px solid rgba(245,184,0,0.08);
+      background: rgba(30, 37, 48, 0.5);
+      border: 1px solid rgba(245, 184, 0, 0.08);
       transition: all 0.2s;
     }
 
     .feature-item:hover {
-      background: rgba(30,37,48,0.9);
-      border-color: rgba(245,184,0,0.25);
+      background: rgba(30, 37, 48, 0.9);
+      border-color: rgba(245, 184, 0, 0.25);
       transform: translateX(4px);
     }
 
@@ -752,12 +834,12 @@
       flex-shrink: 0;
       width: 52px;
       height: 52px;
-      background: rgba(212,32,32,0.12);
+      background: rgba(212, 32, 32, 0.12);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(212,32,32,0.25);
+      border: 1px solid rgba(212, 32, 32, 0.25);
     }
 
     .feature-body h3 {
@@ -797,7 +879,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(212,32,32,0.15) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(212, 32, 32, 0.15) 0%, transparent 60%);
       z-index: 1;
     }
 
@@ -808,7 +890,7 @@
       background: var(--red);
       border-radius: 8px;
       padding: 20px 24px;
-      box-shadow: 0 8px 30px rgba(212,32,32,0.5);
+      box-shadow: 0 8px 30px rgba(212, 32, 32, 0.5);
     }
 
     .wso-val {
@@ -823,7 +905,7 @@
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
-      color: rgba(255,255,255,0.75);
+      color: rgba(255, 255, 255, 0.75);
       text-transform: uppercase;
     }
 
@@ -840,7 +922,7 @@
       gap: 2px;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     }
 
     .service-card {
@@ -854,7 +936,9 @@
     .service-card::before {
       content: '';
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       height: 4px;
       background: linear-gradient(90deg, var(--red), var(--yellow));
       transform: scaleX(0);
@@ -867,19 +951,24 @@
       transform: translateY(-2px);
     }
 
-    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
 
     .service-card-num {
       font-family: var(--ff-hero);
       font-size: 72px;
-      color: rgba(245,184,0,0.08);
+      color: rgba(245, 184, 0, 0.08);
       line-height: 1;
       position: absolute;
       top: 20px;
       right: 20px;
     }
 
-    .service-card-icon { font-size: 36px; margin-bottom: 18px; }
+    .service-card-icon {
+      font-size: 36px;
+      margin-bottom: 18px;
+    }
 
     .service-card h3 {
       font-family: var(--ff-cond);
@@ -921,7 +1010,7 @@
 
     .testi-card {
       background: var(--steel);
-      border: 1px solid rgba(245,184,0,0.1);
+      border: 1px solid rgba(245, 184, 0, 0.1);
       border-radius: 8px;
       padding: 28px;
       position: relative;
@@ -929,7 +1018,7 @@
     }
 
     .testi-card:hover {
-      border-color: rgba(245,184,0,0.3);
+      border-color: rgba(245, 184, 0, 0.3);
       transform: translateY(-3px);
     }
 
@@ -1019,8 +1108,8 @@
     .contact-icon {
       width: 48px;
       height: 48px;
-      background: rgba(212,32,32,0.15);
-      border: 1px solid rgba(212,32,32,0.4);
+      background: rgba(212, 32, 32, 0.15);
+      border: 1px solid rgba(212, 32, 32, 0.4);
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -1053,12 +1142,14 @@
       transition: color 0.2s;
     }
 
-    .contact-item-body a:hover { color: var(--yellow2); }
+    .contact-item-body a:hover {
+      color: var(--yellow2);
+    }
 
     /* Contact form */
     .contact-form {
       background: var(--steel);
-      border: 1px solid rgba(245,184,0,0.12);
+      border: 1px solid rgba(245, 184, 0, 0.12);
       border-radius: 8px;
       padding: 36px;
     }
@@ -1071,7 +1162,9 @@
       margin-bottom: 24px;
     }
 
-    .form-group { margin-bottom: 18px; }
+    .form-group {
+      margin-bottom: 18px;
+    }
 
     .form-group label {
       display: block;
@@ -1089,7 +1182,7 @@
     .form-group textarea {
       width: 100%;
       background: var(--steel2);
-      border: 1px solid rgba(245,184,0,0.15);
+      border: 1px solid rgba(245, 184, 0, 0.15);
       border-radius: 4px;
       padding: 12px 16px;
       color: var(--white);
@@ -1103,7 +1196,7 @@
     .form-group select:focus,
     .form-group textarea:focus {
       border-color: var(--yellow);
-      box-shadow: 0 0 0 3px rgba(245,184,0,0.08);
+      box-shadow: 0 0 0 3px rgba(245, 184, 0, 0.08);
     }
 
     .form-group input::placeholder,
@@ -1111,8 +1204,14 @@
       color: var(--gray1);
     }
 
-    .form-group select option { background: var(--steel2); }
-    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select option {
+      background: var(--steel2);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
 
     .form-row {
       display: grid;
@@ -1154,8 +1253,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(245,184,0,0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,184,0,0.07) 1px, transparent 1px);
+        linear-gradient(rgba(245, 184, 0, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 184, 0, 0.07) 1px, transparent 1px);
       background-size: 40px 40px;
     }
 
@@ -1167,21 +1266,28 @@
     }
 
     @keyframes pinBounce {
-      0%,100% { transform: translateY(0); }
-      50%      { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
-    .map-placeholder{
-  height: 380px;
-  overflow: hidden;
-  border-right: 2px solid var(--yellow);
-}
+    .map-placeholder {
+      height: 380px;
+      overflow: hidden;
+      border-right: 2px solid var(--yellow);
+    }
 
-.map-placeholder iframe{
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+    .map-placeholder iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
 
     .map-info-panel {
       background: var(--red2);
@@ -1224,7 +1330,7 @@
 
     .map-detail-text p {
       font-size: 14px;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255, 255, 255, 0.85);
       line-height: 1.5;
     }
 
@@ -1243,11 +1349,9 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: repeating-linear-gradient(
-        90deg,
-        rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px,
-        transparent 1px, transparent 80px
-      );
+      background: repeating-linear-gradient(90deg,
+          rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px,
+          transparent 1px, transparent 80px);
     }
 
     .cta-banner h2 {
@@ -1261,7 +1365,7 @@
 
     .cta-banner p {
       font-size: 17px;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       margin-bottom: 32px;
       position: relative;
     }
@@ -1275,7 +1379,7 @@
     .cta-banner .btn-white:hover {
       background: var(--yellow2);
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     }
 
     /* ══════════════════════════════════════════════
@@ -1283,7 +1387,7 @@
        ══════════════════════════════════════════════ */
     footer {
       background: var(--dark);
-      border-top: 1px solid rgba(245,184,0,0.15);
+      border-top: 1px solid rgba(245, 184, 0, 0.15);
     }
 
     .footer-main {
@@ -1302,7 +1406,9 @@
       margin-bottom: 6px;
     }
 
-    .footer-brand-name span { color: var(--red); }
+    .footer-brand-name span {
+      color: var(--red);
+    }
 
     .footer-brand-tag {
       font-family: var(--ff-cond);
@@ -1330,7 +1436,7 @@
       width: 38px;
       height: 38px;
       background: var(--steel);
-      border: 1px solid rgba(245,184,0,0.15);
+      border: 1px solid rgba(245, 184, 0, 0.15);
       border-radius: 6px;
       display: flex;
       align-items: center;
@@ -1355,7 +1461,7 @@
       color: var(--yellow);
       margin-bottom: 18px;
       padding-bottom: 10px;
-      border-bottom: 1px solid rgba(245,184,0,0.15);
+      border-bottom: 1px solid rgba(245, 184, 0, 0.15);
     }
 
     .footer-col ul {
@@ -1381,10 +1487,12 @@
       font-size: 10px;
     }
 
-    .footer-col ul li a:hover { color: var(--yellow2); }
+    .footer-col ul li a:hover {
+      color: var(--yellow2);
+    }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       padding: 20px 5%;
       display: flex;
       align-items: center;
@@ -1422,7 +1530,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 20px rgba(212,32,32,0.5);
+      box-shadow: 0 4px 20px rgba(212, 32, 32, 0.5);
       text-decoration: none;
       transition: all 0.2s;
       z-index: 99;
@@ -1437,546 +1545,626 @@
        RESPONSIVE
        ══════════════════════════════════════════════ */
     @media (max-width: 1024px) {
+
       .why-grid,
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .testi-grid { grid-template-columns: 1fr; }
-      .footer-main { grid-template-columns: 1fr 1fr; gap: 30px; }
-      .map-inner { grid-template-columns: 1fr; }
-      .map-placeholder { height: 280px; }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .map-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .map-placeholder {
+        height: 280px;
+      }
     }
 
     @media (max-width: 768px) {
-      section { padding: 60px 5%; }
-      .nav-links { display: none; }
-      .hero-inner { padding-top: 80px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 24px; }
-      .footer-main { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .form-row { grid-template-columns: 1fr; }
-      .hero-right { opacity: 0.2; }
+      section {
+        padding: 60px 5%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-inner {
+        padding-top: 80px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        opacity: 0.2;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  🔨 Now Open — Your Trusted Local Hardware Store in Tigbao, Libagon, Southern Leyte &nbsp;|&nbsp; Call: 0910-287-3573
-</div>
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    🔨 Now Open — Your Trusted Local Hardware Store in Tigbao, Libagon, Southern Leyte &nbsp;|&nbsp; Call: 0910-287-3573
+  </div>
 
-<!-- NAVBAR -->
-<nav>
-  <div class="nav-logo">
-    <div class="nav-logo-icon"><img src="image/evennlogo.png" alt="Evenn Hardware Banner"></div>
-    <div class="nav-logo-text">
-      <span>EVENN</span>
-      <span>Mini Hardware & Hollowblocks</span>
-    </div>
-  </div>
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#why">About</a>
-    <a href="#services">Services</a>
-    <a href="#testimonials">Reviews</a>
-    <a href="#contact" class="nav-cta">📞 Contact Us</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-right">
-    <img src="image/strorefront.jpg" alt="Evenn Hardware">
-  </div>
-  <div class="hero-inner container">
-    <div class="hero-eyebrow">🏗 Tigbao, Libagon, Southern Leyte</div>
-    <h1 class="hero-title">
-      <span class="t-red">EVENN</span>
-      
-    </h1>
-    <div class="hero-sub">Mini Hardware &amp; Hollowblocks</div>
-    <p class="hero-desc">
-      Your trusted one-stop hardware store in Southern Leyte. Quality tools, construction materials, hollowblocks, and supplies — always available at honest prices.
-    </p>
-    <div class="hero-btns">
-      <a href="#products" class="btn btn-primary">🛒 View Products</a>
-      <a href="#contact" class="btn btn-outline">📞 Call Us Now</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-val">500+</div>
-        <div class="stat-label">Products</div>
-      </div>
-      <div class="stat">
-        <div class="stat-val">10+</div>
-        <div class="stat-label">Years Trusted</div>
-      </div>
-      <div class="stat">
-        <div class="stat-val">1000+</div>
-        <div class="stat-label">Happy Customers</div>
-      </div>
-      <div class="stat">
-        <div class="stat-val">24/7</div>
-        <div class="stat-label">Support</div>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-icon"><img src="image/evennlogo.png" alt="Evenn Hardware Banner"></div>
+      <div class="nav-logo-text">
+        <span>EVENN</span>
+        <span>Mini Hardware & Hollowblocks</span>
       </div>
     </div>
-  </div>
-</section>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#why">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact" class="nav-cta">📞 Contact Us</a>
+    </div>
+  </nav>
 
-<!-- HAZARD STRIPE -->
-<div class="hazard"></div>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-right">
+      <img src="image/strorefront.jpg" alt="Evenn Hardware">
+    </div>
+    <div class="hero-inner container">
+      <div class="hero-eyebrow">🏗 Tigbao, Libagon, Southern Leyte</div>
+      <h1 class="hero-title">
+        <span class="t-red">EVENN</span>
 
-<!-- FEATURED BANNER -->
-<div class="featured-banner">
-  <img src="image/evennlogo.png" alt="Evenn Hardware Banner">
-  <div class="featured-banner-overlay">
-    <div class="fbo-content">
-      <div class="fbo-tag">🔥 Featured</div>
-      <div class="fbo-title">
-        THE BEST<br><span>HOLLOWBLOCKS</span><br>IN SOUTHERN LEYTE
+      </h1>
+      <div class="hero-sub">Mini Hardware &amp; Hollowblocks</div>
+      <p class="hero-desc">
+        Your trusted one-stop hardware store in Southern Leyte. Quality tools, construction materials, hollowblocks, and
+        supplies — always available at honest prices.
+      </p>
+      <div class="hero-btns">
+        <a href="#products" class="btn btn-primary">🛒 View Products</a>
+        <a href="#contact" class="btn btn-outline">📞 Call Us Now</a>
       </div>
-      <p class="fbo-desc">Premium quality concrete hollowblocks for all your construction needs. Strong, durable, and affordable.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-val">500+</div>
+          <div class="stat-label">Products</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">10+</div>
+          <div class="stat-label">Years Trusted</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">1000+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">24/7</div>
+          <div class="stat-label">Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAZARD STRIPE -->
+  <div class="hazard"></div>
+
+  <!-- FEATURED BANNER -->
+  <div class="featured-banner">
+    <img src="image/evennlogo.png" alt="Evenn Hardware Banner">
+    <div class="featured-banner-overlay">
+      <div class="fbo-content">
+        <div class="fbo-tag">🔥 Featured</div>
+        <div class="fbo-title">
+          THE BEST<br><span>HOLLOWBLOCKS</span><br>IN SOUTHERN LEYTE
+        </div>
+        <p class="fbo-desc">Premium quality concrete hollowblocks for all your construction needs. Strong, durable, and
+          affordable.</p>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- HAZARD STRIPE -->
-<div class="hazard-sm"></div>
+  <!-- HAZARD STRIPE -->
+  <div class="hazard-sm"></div>
 
-<!-- PRODUCTS SECTION -->
-<section class="products-section" id="products">
-  <div class="container">
-    <div class="section-label">Our Products</div>
-    <h2 class="section-title">WHAT WE <span class="accent">CARRY</span></h2>
-    <p class="section-desc">From construction materials to hand tools — we stock everything a builder, homeowner, or contractor needs.</p>
+  <!-- PRODUCTS SECTION -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-label">Our Products</div>
+      <h2 class="section-title">WHAT WE <span class="accent">CARRY</span></h2>
+      <p class="section-desc">From construction materials to hand tools — we stock everything a builder, homeowner, or
+        contractor needs.</p>
 
-    <div class="products-grid">
+      <div class="products-grid">
 
-      <div class="product-card">
-        
-        <div class="product-card-img"><img src="image/hollowblocks.jpg" alt="Hollowblocks"><div class="product-badge">Bestseller</div></div>
-        <div class="product-card-body">
-          <div class="product-card-cat">Construction</div>
-          <div class="product-card-name">Hollowblocks</div>
-          <p class="product-card-desc">Standard and heavy-duty concrete hollow blocks for walls, fences, and foundations. Available in various sizes.</p>
+        <div class="product-card">
+
+          <div class="product-card-img"><img src="image/hollowblocks.jpg" alt="Hollowblocks">
+            <div class="product-badge">Bestseller</div>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Construction</div>
+            <div class="product-card-name">Hollowblocks</div>
+            <p class="product-card-desc">Standard and heavy-duty concrete hollow blocks for walls, fences, and
+              foundations. Available in various sizes.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="product-card">
-        <div class="product-card-img"><img src="image/nails.jpg" alt="Bolts Nails Screws"></div>
-        
-        <div class="product-card-body">
-          <div class="product-card-cat">Fasteners</div>
-          <div class="product-card-name">Bolts, Nails & Screws</div>
-          <p class="product-card-desc">Complete range of fasteners — concrete nails, wire nails, bolts, nuts, and assorted screws for every project.</p>
+        <div class="product-card">
+          <div class="product-card-img"><img src="image/nails.jpg" alt="Bolts Nails Screws"></div>
+
+          <div class="product-card-body">
+            <div class="product-card-cat">Fasteners</div>
+            <div class="product-card-name">Bolts, Nails & Screws</div>
+            <p class="product-card-desc">Complete range of fasteners — concrete nails, wire nails, bolts, nuts, and
+              assorted screws for every project.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="product-card">
-        <div class="product-card-img"><img src="image/paint.jpg" alt="Paints"><div class="product-badge">New</div></div>
-        <div class="product-card-body">
-          <div class="product-card-cat">Finishing</div>
-          <div class="product-card-name">Paints & Varnish</div>
-          <p class="product-card-desc">Interior and exterior paints, wood stains, primers, and varnishes from trusted brands. Wide color selection.</p>
+        <div class="product-card">
+          <div class="product-card-img"><img src="image/paint.jpg" alt="Paints">
+            <div class="product-badge">New</div>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Finishing</div>
+            <div class="product-card-name">Paints & Varnish</div>
+            <p class="product-card-desc">Interior and exterior paints, wood stains, primers, and varnishes from trusted
+              brands. Wide color selection.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="product-card">
-        <div class="product-card-img"><img src="image/tools.jpg" alt="Tools"></div>
-        <div class="product-card-body">
-          <div class="product-card-cat">Tools</div>
-          <div class="product-card-name">Hand & Power Tools</div>
-          <p class="product-card-desc">Hammers, drills, saws, grinders, and more. Quality hand and power tools for professionals and DIY builders.</p>
+        <div class="product-card">
+          <div class="product-card-img"><img src="image/tools.jpg" alt="Tools"></div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Tools</div>
+            <div class="product-card-name">Hand & Power Tools</div>
+            <p class="product-card-desc">Hammers, drills, saws, grinders, and more. Quality hand and power tools for
+              professionals and DIY builders.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="product-card">
-        <div class="product-card-img"><img src="image/electrical.jpg" alt="Electrical"></div>
-        <div class="product-card-body">
-          <div class="product-card-cat">Electrical</div>
-          <div class="product-card-name">Wires & Electrical</div>
-          <p class="product-card-desc">Electrical wires, outlets, switches, circuit breakers, and all electrical supplies for safe wiring projects.</p>
+        <div class="product-card">
+          <div class="product-card-img"><img src="image/electrical.jpg" alt="Electrical"></div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Electrical</div>
+            <div class="product-card-name">Wires & Electrical</div>
+            <p class="product-card-desc">Electrical wires, outlets, switches, circuit breakers, and all electrical
+              supplies for safe wiring projects.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="product-card">
-        <div class="product-card-img"><img src="image/plumbing.jpg" alt="Plumbing"></div>
-        <div class="product-card-body">
-          <div class="product-card-cat">Plumbing</div>
-          <div class="product-card-name">Pipes & Fittings</div>
-          <p class="product-card-desc">PVC pipes, G.I. pipes, fittings, valves, and all plumbing materials. Perfect for residential and commercial use.</p>
+        <div class="product-card">
+          <div class="product-card-img"><img src="image/plumbing.jpg" alt="Plumbing"></div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Plumbing</div>
+            <div class="product-card-name">Pipes & Fittings</div>
+            <p class="product-card-desc">PVC pipes, G.I. pipes, fittings, valves, and all plumbing materials. Perfect
+              for residential and commercial use.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="product-card">
-        <div class="product-card-img"><img src="image/safety.jpg" alt="Safety"></div>
-        <div class="product-card-body">
-          <div class="product-card-cat">Safety</div>
-          <div class="product-card-name">Safety Equipment</div>
-          <p class="product-card-desc">Hard hats, gloves, safety boots, goggles, and personal protective equipment for your site safety.</p>
+        <div class="product-card">
+          <div class="product-card-img"><img src="image/safety.jpg" alt="Safety"></div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Safety</div>
+            <div class="product-card-name">Safety Equipment</div>
+            <p class="product-card-desc">Hard hats, gloves, safety boots, goggles, and personal protective equipment for
+              your site safety.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="product-card">
-        <div class="product-card-img"><img src="image/wood.jpg" alt="Lumber"></div>
-        <div class="product-card-body">
-          <div class="product-card-cat">Lumber</div>
-          <div class="product-card-name">Wood & Lumber</div>
-          <p class="product-card-desc">Plywood, coco lumber, rough wood, and engineered wood products for roofing, flooring, and framing.</p>
+        <div class="product-card">
+          <div class="product-card-img"><img src="image/wood.jpg" alt="Lumber"></div>
+          <div class="product-card-body">
+            <div class="product-card-cat">Lumber</div>
+            <div class="product-card-name">Wood & Lumber</div>
+            <p class="product-card-desc">Plywood, coco lumber, rough wood, and engineered wood products for roofing,
+              flooring, and framing.</p>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- HAZARD STRIPE -->
-<div class="hazard"></div>
+  <!-- HAZARD STRIPE -->
+  <div class="hazard"></div>
 
-<!-- WHY CHOOSE US -->
-<section class="why-section" id="why">
-  <div class="container">
-    <div class="why-grid">
-      <div>
-        <div class="section-label">Why Choose Us</div>
-        <h2 class="section-title">BUILT ON <span class="accent">TRUST</span></h2>
-        <p class="section-desc">We've been serving families and builders in Tigbao, Libagon and surrounding areas for years — and we never compromise on quality or service.</p>
+  <!-- WHY CHOOSE US -->
+  <section class="why-section" id="why">
+    <div class="container">
+      <div class="why-grid">
+        <div>
+          <div class="section-label">Why Choose Us</div>
+          <h2 class="section-title">BUILT ON <span class="accent">TRUST</span></h2>
+          <p class="section-desc">We've been serving families and builders in Tigbao, Libagon and surrounding areas for
+            years — and we never compromise on quality or service.</p>
 
-        <div class="why-features">
-          <div class="feature-item">
-            <div class="feature-icon">✅</div>
-            <div class="feature-body">
-              <h3>Quality You Can Count On</h3>
-              <p>Every product we carry is tested and trusted by local builders. We source only from reliable suppliers to make sure your projects are built to last.</p>
+          <div class="why-features">
+            <div class="feature-item">
+              <div class="feature-icon">✅</div>
+              <div class="feature-body">
+                <h3>Quality You Can Count On</h3>
+                <p>Every product we carry is tested and trusted by local builders. We source only from reliable
+                  suppliers to make sure your projects are built to last.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">💰</div>
+              <div class="feature-body">
+                <h3>Honest & Affordable Prices</h3>
+                <p>We believe good materials shouldn't break the bank. Our prices are fair and competitive — no hidden
+                  charges, no overpricing.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📦</div>
+              <div class="feature-body">
+                <h3>Wide Product Selection</h3>
+                <p>From hollowblocks to paint, from nails to electrical supplies — we have everything you need in one
+                  place so you save time and trips.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🤝</div>
+              <div class="feature-body">
+                <h3>Friendly Local Service</h3>
+                <p>We're your neighbors! Our team knows the local community and is always ready to help you find exactly
+                  what you need for your project.</p>
+              </div>
             </div>
           </div>
-          <div class="feature-item">
-            <div class="feature-icon">💰</div>
-            <div class="feature-body">
-              <h3>Honest & Affordable Prices</h3>
-              <p>We believe good materials shouldn't break the bank. Our prices are fair and competitive — no hidden charges, no overpricing.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">📦</div>
-            <div class="feature-body">
-              <h3>Wide Product Selection</h3>
-              <p>From hollowblocks to paint, from nails to electrical supplies — we have everything you need in one place so you save time and trips.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">🤝</div>
-            <div class="feature-body">
-              <h3>Friendly Local Service</h3>
-              <p>We're your neighbors! Our team knows the local community and is always ready to help you find exactly what you need for your project.</p>
-            </div>
-          </div>
         </div>
-      </div>
 
-      <div class="why-image-panel">
-        <div class="why-image-panel-inner">
-          <img src="/mnt/user-data/uploads/Mug_Designs_8x3_8in__13_.png" alt="Evenn Hardware Store">
-        </div>
-        <div class="why-stat-overlay">
-          <div class="wso-val">100%</div>
-          <div class="wso-label">Customer Satisfaction</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services-section" id="services">
-  <div class="container">
-    <div class="section-label">What We Offer</div>
-    <h2 class="section-title">OUR <span class="accent">SERVICES</span></h2>
-    <p class="section-desc">We go beyond just selling products — we're your complete construction partner.</p>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-card-num">01</div>
-        <div class="service-card-icon">🛒</div>
-        <h3>Retail Hardware Sales</h3>
-        <p>Walk in and shop from our wide selection of hardware products, construction materials, and tools at affordable prices.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-card-num">02</div>
-        <div class="service-card-icon">🧱</div>
-        <h3>Hollowblocks Supply</h3>
-        <p>We supply quality concrete hollowblocks in bulk for residential and commercial construction projects throughout Southern Leyte.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-card-num">03</div>
-        <div class="service-card-icon">🚚</div>
-        <h3>Bulk Order & Delivery</h3>
-        <p>Need large quantities? We accommodate bulk orders for contractors and developers. Delivery options available for heavy materials.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-card-num">04</div>
-        <div class="service-card-icon">📋</div>
-        <h3>Project Estimation</h3>
-        <p>Not sure how much materials you need? Our team can help you estimate quantities for your construction or renovation project.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-card-num">05</div>
-        <div class="service-card-icon">💬</div>
-        <h3>Expert Advice</h3>
-        <p>Our knowledgeable staff is always ready to answer your questions and recommend the right products for your specific needs.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-card-num">06</div>
-        <div class="service-card-icon">📦</div>
-        <h3>Special Orders</h3>
-        <p>Don't see what you need? We can source and order specific materials and products for your project upon request.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HAZARD STRIPE -->
-<div class="hazard-sm"></div>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials-section" id="testimonials">
-  <div class="container">
-    <div class="section-label">Customer Reviews</div>
-    <h2 class="section-title">WHAT PEOPLE <span class="accent">SAY</span></h2>
-    <p class="section-desc">Don't just take our word for it — hear from the builders and homeowners who trust Evenn Hardware.</p>
-
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Dako kaayo ug tabang ang Evenn Hardware sa among balay nga construction. Ang mga materials maayo ang quality ug barato pa. Highly recommended para sa tanan nga nag-patukod!</p>
-        <div class="testi-author">
-          <div class="testi-av">R</div>
-          <div>
-            <div class="testi-name">Quevenn Endico</div>
-            <div class="testi-location">Tigbao, Libagon</div>
+        <div class="why-image-panel">
+          <div class="why-image-panel-inner">
+            <img src="image/strorefront.jpg" alt="Evenn Hardware Store">
           </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">As a contractor, I always get my hollowblocks and construction materials here. The quality is consistent and the price is very competitive compared to other hardware stores in the area.</p>
-        <div class="testi-author">
-          <div class="testi-av">J</div>
-          <div>
-            <div class="testi-name">Anonymous</div>
-            <div class="testi-location">Contractor, Southern Leyte</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">Ganahan kaayo ko manimaod sa Evenn Hardware kay ayo ang service ug limpyo ang tindahan. Ang mga tawo helpful kaayo ug pirme andam motabang sa imong pangita. Sulit kaayo!</p>
-        <div class="testi-author">
-          <div class="testi-av">M</div>
-          <div>
-            <div class="testi-name">Veeviene E.</div>
-            <div class="testi-location">Sogod, Southern Leyte</div>
+          <div class="why-stat-overlay">
+            <div class="wso-val">100%</div>
+            <div class="wso-label">Customer Satisfaction</div>
           </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">OUR <span class="accent">SERVICES</span></h2>
+      <p class="section-desc">We go beyond just selling products — we're your complete construction partner.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-num">01</div>
+          <div class="service-card-icon">🛒</div>
+          <h3>Retail Hardware Sales</h3>
+          <p>Walk in and shop from our wide selection of hardware products, construction materials, and tools at
+            affordable prices.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-num">02</div>
+          <div class="service-card-icon">🧱</div>
+          <h3>Hollowblocks Supply</h3>
+          <p>We supply quality concrete hollowblocks in bulk for residential and commercial construction projects
+            throughout Southern Leyte.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-num">03</div>
+          <div class="service-card-icon">🚚</div>
+          <h3>Bulk Order & Delivery</h3>
+          <p>Need large quantities? We accommodate bulk orders for contractors and developers. Delivery options
+            available for heavy materials.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-num">04</div>
+          <div class="service-card-icon">📋</div>
+          <h3>Project Estimation</h3>
+          <p>Not sure how much materials you need? Our team can help you estimate quantities for your construction or
+            renovation project.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-num">05</div>
+          <div class="service-card-icon">💬</div>
+          <h3>Expert Advice</h3>
+          <p>Our knowledgeable staff is always ready to answer your questions and recommend the right products for your
+            specific needs.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-num">06</div>
+          <div class="service-card-icon">📦</div>
+          <h3>Special Orders</h3>
+          <p>Don't see what you need? We can source and order specific materials and products for your project upon
+            request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAZARD STRIPE -->
+  <div class="hazard-sm"></div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-label">Customer Reviews</div>
+      <h2 class="section-title">WHAT PEOPLE <span class="accent">SAY</span></h2>
+      <p class="section-desc">Don't just take our word for it — hear from the builders and homeowners who trust Evenn
+        Hardware.</p>
+
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Dako kaayo ug tabang ang Evenn Hardware sa among balay nga construction. Ang mga
+            materials maayo ang quality ug barato pa. Highly recommended para sa tanan nga nag-patukod!</p>
+          <div class="testi-author">
+            <div class="testi-av">R</div>
+            <div>
+              <div class="testi-name">Quevenn Endico</div>
+              <div class="testi-location">Tigbao, Libagon</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">As a contractor, I always get my hollowblocks and construction materials here. The
+            quality is consistent and the price is very competitive compared to other hardware stores in the area.</p>
+          <div class="testi-author">
+            <div class="testi-av">J</div>
+            <div>
+              <div class="testi-name">Anonymous</div>
+              <div class="testi-location">Contractor, Southern Leyte</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Ganahan kaayo ko manimaod sa Evenn Hardware kay ayo ang service ug limpyo ang tindahan.
+            Ang mga tawo helpful kaayo ug pirme andam motabang sa imong pangita. Sulit kaayo!</p>
+          <div class="testi-author">
+            <div class="testi-av">M</div>
+            <div>
+              <div class="testi-name">Veeviene E.</div>
+              <div class="testi-location">Sogod, Southern Leyte</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>READY TO BUILD YOUR DREAM?</h2>
+    <p>Visit us today or call now — we have everything you need to get started!</p>
+    <a href="tel:09102873573" class="btn btn-white">📞 Call 0910-287-3573</a>
   </div>
-</section>
 
-<!-- CTA BANNER -->
-<div class="cta-banner">
-  <h2>READY TO BUILD YOUR DREAM?</h2>
-  <p>Visit us today or call now — we have everything you need to get started!</p>
-  <a href="tel:09102873573" class="btn btn-white">📞 Call 0910-287-3573</a>
-</div>
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">CONTACT <span class="accent">US</span></h2>
+      <p class="section-desc">Have questions about a product or need a bulk quote? Reach out to us anytime — we're
+        always happy to help!</p>
 
-<!-- CONTACT SECTION -->
-<section class="contact-section" id="contact">
-  <div class="container">
-    <div class="section-label">Get In Touch</div>
-    <h2 class="section-title">CONTACT <span class="accent">US</span></h2>
-    <p class="section-desc">Have questions about a product or need a bulk quote? Reach out to us anytime — we're always happy to help!</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-item-body">
+              <h4>Location</h4>
+              <p>Tigbao, Libagon<br>Southern Leyte, Philippines</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-item-body">
+              <h4>Phone Numbers</h4>
+              <a href="tel:09102873573">0910-287-3573</a><br>
+              <a href="tel:09511915227">0951-191-5227</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-item-body">
+              <h4>Store Hours</h4>
+              <p>Monday – Saturday: 7:00 AM – 6:00 PM<br>Sunday: 8:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📘</div>
+            <div class="contact-item-body">
+              <h4>Facebook Page</h4>
+              <a href="#">Evenn Mini Hardware & Hollowblocks</a>
+            </div>
+          </div>
 
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div class="contact-item-body">
-            <h4>Location</h4>
+          <!-- Phone cards -->
+          <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px">
+            <a href="tel:09102873573" class="btn btn-primary" style="font-size:13px;padding:12px 22px">📞
+              0910-287-3573</a>
+            <a href="tel:09511915227" class="btn btn-outline" style="font-size:13px;padding:12px 22px">📞
+              0951-191-5227</a>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3>SEND A MESSAGE</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Juan">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Dela Cruz">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Contact Number</label>
+            <input type="tel" placeholder="09XX XXX XXXX">
+          </div>
+          <div class="form-group">
+            <label>Inquiry Type</label>
+            <select>
+              <option>Product Availability</option>
+              <option>Bulk Order / Pricing</option>
+              <option>Hollowblocks Supply</option>
+              <option>Delivery Inquiry</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Message</label>
+            <textarea placeholder="Tell us what you need…"></textarea>
+          </div>
+          <button type="button" class="btn btn-primary" style="width:100%;justify-content:center">🔨 Send
+            Inquiry</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <div class="map-section">
+    <div class="map-inner">
+      <div class="map-placeholder">
+        <iframe src="https://www.google.com/maps?q=Evenn+Hollowblocks+Libagon+Southern+Leyte&output=embed" width="100%"
+          height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="map-info-panel">
+        <h3>FIND US HERE</h3>
+        <div class="map-detail-row">
+          <div class="map-detail-icon">📍</div>
+          <div class="map-detail-text">
+            <h4>Address</h4>
             <p>Tigbao, Libagon<br>Southern Leyte, Philippines</p>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div class="contact-item-body">
-            <h4>Phone Numbers</h4>
-            <a href="tel:09102873573">0910-287-3573</a><br>
-            <a href="tel:09511915227">0951-191-5227</a>
+        <div class="map-detail-row">
+          <div class="map-detail-icon">📞</div>
+          <div class="map-detail-text">
+            <h4>Contact</h4>
+            <p>0910-287-3573<br>0951-191-5227</p>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="contact-icon">🕐</div>
-          <div class="contact-item-body">
+        <div class="map-detail-row">
+          <div class="map-detail-icon">🕐</div>
+          <div class="map-detail-text">
             <h4>Store Hours</h4>
-            <p>Monday – Saturday: 7:00 AM – 6:00 PM<br>Sunday: 8:00 AM – 5:00 PM</p>
+            <p>Mon–Sat: 7AM – 6PM<br>Sun: 8AM – 5PM</p>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="contact-icon">📘</div>
-          <div class="contact-item-body">
-            <h4>Facebook Page</h4>
-            <a href="#">Evenn Mini Hardware & Hollowblocks</a>
-          </div>
+        <div style="margin-top:20px">
+          <a href="https://www.google.com/maps/place/Evenn+Hollowblocks/@10.3172938,125.0423247,19.25z/data=!4m6!3m5!1s0x33071bae5c7600bd:0xce198ca47fa011b6!8m2!3d10.3175614!4d125.0425147!16s%2Fg%2F11vkjtc5qw!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQyNy4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank" class="btn btn-outline"
+            style="font-size:13px;border-color:rgba(255,255,255,0.4);color:white">🗺 Open in Google Maps</a>
         </div>
-
-        <!-- Phone cards -->
-        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px">
-          <a href="tel:09102873573" class="btn btn-primary" style="font-size:13px;padding:12px 22px">📞 0910-287-3573</a>
-          <a href="tel:09511915227" class="btn btn-outline" style="font-size:13px;padding:12px 22px">📞 0951-191-5227</a>
-        </div>
-      </div>
-
-      <div class="contact-form">
-        <h3>SEND A MESSAGE</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Juan">
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Dela Cruz">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Contact Number</label>
-          <input type="tel" placeholder="09XX XXX XXXX">
-        </div>
-        <div class="form-group">
-          <label>Inquiry Type</label>
-          <select>
-            <option>Product Availability</option>
-            <option>Bulk Order / Pricing</option>
-            <option>Hollowblocks Supply</option>
-            <option>Delivery Inquiry</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Your Message</label>
-          <textarea placeholder="Tell us what you need…"></textarea>
-        </div>
-        <button type="button" class="btn btn-primary" style="width:100%;justify-content:center">🔨 Send Inquiry</button>
       </div>
     </div>
   </div>
-</section>
 
-<!-- MAP SECTION -->
-<div class="map-section">
-  <div class="map-inner">
-    <div class="map-placeholder">
-  <iframe
-    src="https://www.google.com/maps?q=Evenn+Hollowblocks+Libagon+Southern+Leyte&output=embed"
-    width="100%"
-    height="100%"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
-    <div class="map-info-panel">
-      <h3>FIND US HERE</h3>
-      <div class="map-detail-row">
-        <div class="map-detail-icon">📍</div>
-        <div class="map-detail-text">
-          <h4>Address</h4>
-          <p>Tigbao, Libagon<br>Southern Leyte, Philippines</p>
+  <!-- HAZARD STRIPE -->
+  <div class="hazard"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-main">
+      <div>
+        <div class="footer-brand-name"><span>EVENN</span> HARDWARE</div>
+        <div class="footer-brand-tag">Mini Hardware & Hollowblocks</div>
+        <p class="footer-brand-desc">Your trusted local hardware store in Tigbao, Libagon, Southern Leyte. Quality
+          materials, honest prices, friendly service — always.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn">📘</a>
+          <a href="tel:09102873573" class="footer-social-btn">📞</a>
+          <a href="#" class="footer-social-btn">💬</a>
         </div>
       </div>
-      <div class="map-detail-row">
-        <div class="map-detail-icon">📞</div>
-        <div class="map-detail-text">
-          <h4>Contact</h4>
-          <p>0910-287-3573<br>0951-191-5227</p>
-        </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Hollowblocks</a></li>
+          <li><a href="#">Hand Tools</a></li>
+          <li><a href="#">Power Tools</a></li>
+          <li><a href="#">Paints & Varnish</a></li>
+          <li><a href="#">Electrical Supplies</a></li>
+          <li><a href="#">Plumbing</a></li>
+        </ul>
       </div>
-      <div class="map-detail-row">
-        <div class="map-detail-icon">🕐</div>
-        <div class="map-detail-text">
-          <h4>Store Hours</h4>
-          <p>Mon–Sat: 7AM – 6PM<br>Sun: 8AM – 5PM</p>
-        </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Retail Sales</a></li>
+          <li><a href="#">Bulk Orders</a></li>
+          <li><a href="#">Delivery</a></li>
+          <li><a href="#">Project Estimation</a></li>
+          <li><a href="#">Special Orders</a></li>
+        </ul>
       </div>
-      <div style="margin-top:20px">
-        <a href="https://www.google.com/maps/place/Evenn+Hollowblocks/@10.3172938,125.0423247,19.25z/data=!4m6!3m5!1s0x33071bae5c7600bd:0xce198ca47fa011b6!8m2!3d10.3175614!4d125.0425147!16s%2Fg%2F11vkjtc5qw!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-outline" style="font-size:13px;border-color:rgba(255,255,255,0.4);color:white">🗺 Open in Google Maps</a>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Tigbao, Libagon</a></li>
+          <li><a href="tel:09102873573">0910-287-3573</a></li>
+          <li><a href="tel:09511915227">0951-191-5227</a></li>
+          <li><a href="#">Mon–Sat: 7AM–6PM</a></li>
+          <li><a href="#">Sun: 8AM–5PM</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-</div>
+    <div class="footer-bottom">
+      <p>© 2025 <span>Evenn Mini Hardware & Hollowblocks</span>. All rights reserved.</p>
+      <p>Tigbao, Libagon, Southern Leyte, Philippines</p>
+    </div>
+  </footer>
 
-<!-- HAZARD STRIPE -->
-<div class="hazard"></div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-main">
-    <div>
-      <div class="footer-brand-name"><span>EVENN</span> HARDWARE</div>
-      <div class="footer-brand-tag">Mini Hardware & Hollowblocks</div>
-      <p class="footer-brand-desc">Your trusted local hardware store in Tigbao, Libagon, Southern Leyte. Quality materials, honest prices, friendly service — always.</p>
-      <div class="footer-socials">
-        <a href="#" class="footer-social-btn">📘</a>
-        <a href="tel:09102873573" class="footer-social-btn">📞</a>
-        <a href="#" class="footer-social-btn">💬</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Products</h4>
-      <ul>
-        <li><a href="#">Hollowblocks</a></li>
-        <li><a href="#">Hand Tools</a></li>
-        <li><a href="#">Power Tools</a></li>
-        <li><a href="#">Paints & Varnish</a></li>
-        <li><a href="#">Electrical Supplies</a></li>
-        <li><a href="#">Plumbing</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#">Retail Sales</a></li>
-        <li><a href="#">Bulk Orders</a></li>
-        <li><a href="#">Delivery</a></li>
-        <li><a href="#">Project Estimation</a></li>
-        <li><a href="#">Special Orders</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="#">Tigbao, Libagon</a></li>
-        <li><a href="tel:09102873573">0910-287-3573</a></li>
-        <li><a href="tel:09511915227">0951-191-5227</a></li>
-        <li><a href="#">Mon–Sat: 7AM–6PM</a></li>
-        <li><a href="#">Sun: 8AM–5PM</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 <span>Evenn Mini Hardware & Hollowblocks</span>. All rights reserved.</p>
-    <p>Tigbao, Libagon, Southern Leyte, Philippines</p>
-  </div>
-</footer>
-
-<!-- BACK TO TOP -->
-<a href="#home" class="back-top">↑</a>
+  <!-- BACK TO TOP -->
+  <a href="#home" class="back-top">↑</a>
 
 </body>
+
 </html>
