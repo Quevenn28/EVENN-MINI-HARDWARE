@@ -10,6 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&family=Barlow+Condensed:wght@500;700;800;900&display=swap"
     rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
   <style>
     /* ============================================================
@@ -389,6 +390,19 @@
         transform: scale(0.8);
       }
     }
+
+    #animated-title{
+  font-size: clamp(64px, 10vw, 130px);
+  font-family: var(--ff-hero);
+  color: var(--red);
+  -webkit-text-stroke: 2px var(--yellow);
+  letter-spacing: 3px;
+  line-height: .9;
+}
+
+.char{
+  display:inline-block;
+}
 
     .hero-title {
       font-family: var(--ff-hero);
@@ -1611,6 +1625,7 @@
       .hero-right {
         opacity: 0.2;
       }
+
     }
   </style>
 </head>
@@ -1648,10 +1663,9 @@
     </div>
     <div class="hero-inner container">
       <div class="hero-eyebrow">🏗 Tigbao, Libagon, Southern Leyte</div>
-      <h1 class="hero-title">
-        <span class="t-red">EVENN</span>
+      <h1 class="hero-title" id="animated-title">EVENN</h1>
 
-      </h1>
+      
       <div class="hero-sub">Mini Hardware &amp; Hollowblocks</div>
       <p class="hero-desc">
         Your trusted one-stop hardware store in Southern Leyte. Quality tools, construction materials, hollowblocks, and
@@ -2164,6 +2178,35 @@
 
   <!-- BACK TO TOP -->
   <a href="#home" class="back-top">↑</a>
+  
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  let text = document.getElementById("animated-title");
+  let letters = text.textContent.split("");
+
+  text.innerHTML = letters.map(letter =>
+    `<span class="char">${letter === " " ? "&nbsp;" : letter}</span>`
+  ).join("");
+
+  anime({
+    targets: "#animated-title .char",
+    translateY: [
+      { value: -45, duration: 600, easing: 'easeOutExpo' },
+      { value: 0, duration: 800, easing: 'easeOutBounce' }
+    ],
+    rotate: {
+      value: '-1turn',
+      duration: 5000
+    },
+    delay: anime.stagger(80),
+    loop: true,
+    loopDelay: 1500
+  });
+
+});
+</script>
 
 </body>
 
