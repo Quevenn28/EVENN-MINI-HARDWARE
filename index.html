@@ -1627,13 +1627,101 @@
       }
 
     }
+
+    /* ══════════════════════════════════════════════
+       FLAG LANGUAGE SWITCHER
+       ══════════════════════════════════════════════ */
+    .lang-switcher {
+      position: fixed;
+      top: 90px;
+      right: 20px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-btn {
+      background: var(--steel);
+      border: 2px solid var(--yellow);
+      border-radius: 10px;
+      padding: 6px 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--ff-cond);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--yellow2);
+      transition: all 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+      white-space: nowrap;
+    }
+
+    .lang-btn:hover {
+      background: var(--yellow);
+      color: var(--dark);
+      transform: scale(1.05);
+    }
+
+    .lang-btn .flag-emoji {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .lang-btn .lang-label {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .lang-switcher-dots {
+      display: flex;
+      gap: 5px;
+      margin-top: 2px;
+    }
+
+    .lang-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--steel2);
+      border: 1px solid rgba(245,184,0,0.3);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-dot.active {
+      background: var(--yellow);
+      border-color: var(--yellow);
+    }
+
+    /* Lang transition */
+    [data-i18n] {
+      transition: opacity 0.2s ease;
+    }
+    .lang-fade {
+      opacity: 0;
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- FLAG LANGUAGE SWITCHER -->
+  <div class="lang-switcher" id="langSwitcher">
+    <button class="lang-btn" id="langBtn" onclick="cycleLang()" title="Switch Language">
+      <span class="flag-emoji" id="langFlag">🇬🇧</span>
+      <span class="lang-label" id="langLabel">English</span>
+    </button>
+    <div class="lang-switcher-dots" id="langDots"></div>
+  </div>
+
   <!-- TOP BAR -->
-  <div class="top-bar">
+  <div class="top-bar" data-i18n="topbar">
     🔨 Now Open — Your Trusted Local Hardware Store in Tigbao, Libagon, Southern Leyte &nbsp;|&nbsp; Call: 0910-287-3573
   </div>
 
@@ -1647,12 +1735,12 @@
       </div>
     </div>
     <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#why">About</a>
-      <a href="#services">Services</a>
-      <a href="#testimonials">Reviews</a>
-      <a href="#contact" class="nav-cta">📞 Contact Us</a>
+      <a href="#home" data-i18n="nav_home">Home</a>
+      <a href="#products" data-i18n="nav_products">Products</a>
+      <a href="#why" data-i18n="nav_about">About</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#testimonials" data-i18n="nav_reviews">Reviews</a>
+      <a href="#contact" class="nav-cta" data-i18n="nav_contact">📞 Contact Us</a>
     </div>
   </nav>
 
@@ -1662,35 +1750,35 @@
       <img src="image/strorefront.jpg" alt="Evenn Hardware">
     </div>
     <div class="hero-inner container">
-      <div class="hero-eyebrow">🏗 Tigbao, Libagon, Southern Leyte</div>
+      <div class="hero-eyebrow" data-i18n="hero_eyebrow">🏗 Tigbao, Libagon, Southern Leyte</div>
       <h1 class="hero-title" id="animated-title">EVENN</h1>
 
       
-      <div class="hero-sub">Mini Hardware &amp; Hollowblocks</div>
-      <p class="hero-desc">
+      <div class="hero-sub" data-i18n="hero_sub">Mini Hardware &amp; Hollowblocks</div>
+      <p class="hero-desc" data-i18n="hero_desc">
         Your trusted one-stop hardware store in Southern Leyte. Quality tools, construction materials, hollowblocks, and
         supplies — always available at honest prices.
       </p>
       <div class="hero-btns">
-        <a href="#products" class="btn btn-primary">🛒 View Products</a>
-        <a href="#contact" class="btn btn-outline">📞 Call Us Now</a>
+        <a href="#products" class="btn btn-primary" data-i18n="hero_btn_products">🛒 View Products</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="hero_btn_call">📞 Call Us Now</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
           <div class="stat-val">500+</div>
-          <div class="stat-label">Products</div>
+          <div class="stat-label" data-i18n="stat_products">Products</div>
         </div>
         <div class="stat">
           <div class="stat-val">10+</div>
-          <div class="stat-label">Years Trusted</div>
+          <div class="stat-label" data-i18n="stat_years">Years Trusted</div>
         </div>
         <div class="stat">
           <div class="stat-val">1000+</div>
-          <div class="stat-label">Happy Customers</div>
+          <div class="stat-label" data-i18n="stat_customers">Happy Customers</div>
         </div>
         <div class="stat">
           <div class="stat-val">24/7</div>
-          <div class="stat-label">Support</div>
+          <div class="stat-label" data-i18n="stat_support">Support</div>
         </div>
       </div>
     </div>
@@ -1704,11 +1792,11 @@
     <img src="image/evennlogo.png" alt="Evenn Hardware Banner">
     <div class="featured-banner-overlay">
       <div class="fbo-content">
-        <div class="fbo-tag">🔥 Featured</div>
-        <div class="fbo-title">
+        <div class="fbo-tag" data-i18n="feat_tag">🔥 Featured</div>
+        <div class="fbo-title" data-i18n="feat_title">
           THE BEST<br><span>HOLLOWBLOCKS</span><br>IN SOUTHERN LEYTE
         </div>
-        <p class="fbo-desc">Premium quality concrete hollowblocks for all your construction needs. Strong, durable, and
+        <p class="fbo-desc" data-i18n="feat_desc">Premium quality concrete hollowblocks for all your construction needs. Strong, durable, and
           affordable.</p>
       </div>
     </div>
@@ -1720,9 +1808,9 @@
   <!-- PRODUCTS SECTION -->
   <section class="products-section" id="products">
     <div class="container">
-      <div class="section-label">Our Products</div>
-      <h2 class="section-title">WHAT WE <span class="accent">CARRY</span></h2>
-      <p class="section-desc">From construction materials to hand tools — we stock everything a builder, homeowner, or
+      <div class="section-label" data-i18n="prod_label">Our Products</div>
+      <h2 class="section-title">WHAT WE <span class="accent" data-i18n="prod_carry">CARRY</span></h2>
+      <p class="section-desc" data-i18n="prod_desc">From construction materials to hand tools — we stock everything a builder, homeowner, or
         contractor needs.</p>
 
       <div class="products-grid">
@@ -1825,9 +1913,9 @@
     <div class="container">
       <div class="why-grid">
         <div>
-          <div class="section-label">Why Choose Us</div>
-          <h2 class="section-title">BUILT ON <span class="accent">TRUST</span></h2>
-          <p class="section-desc">We've been serving families and builders in Tigbao, Libagon and surrounding areas for
+          <div class="section-label" data-i18n="why_label">Why Choose Us</div>
+          <h2 class="section-title">BUILT ON <span class="accent" data-i18n="why_trust">TRUST</span></h2>
+          <p class="section-desc" data-i18n="why_desc">We've been serving families and builders in Tigbao, Libagon and surrounding areas for
             years — and we never compromise on quality or service.</p>
 
           <div class="why-features">
@@ -1882,9 +1970,9 @@
   <!-- SERVICES -->
   <section class="services-section" id="services">
     <div class="container">
-      <div class="section-label">What We Offer</div>
-      <h2 class="section-title">OUR <span class="accent">SERVICES</span></h2>
-      <p class="section-desc">We go beyond just selling products — we're your complete construction partner.</p>
+      <div class="section-label" data-i18n="svc_label">What We Offer</div>
+      <h2 class="section-title">OUR <span class="accent" data-i18n="svc_title">SERVICES</span></h2>
+      <p class="section-desc" data-i18n="svc_desc">We go beyond just selling products — we're your complete construction partner.</p>
 
       <div class="services-grid">
         <div class="service-card">
@@ -1939,9 +2027,9 @@
   <!-- TESTIMONIALS -->
   <section class="testimonials-section" id="testimonials">
     <div class="container">
-      <div class="section-label">Customer Reviews</div>
-      <h2 class="section-title">WHAT PEOPLE <span class="accent">SAY</span></h2>
-      <p class="section-desc">Don't just take our word for it — hear from the builders and homeowners who trust Evenn
+      <div class="section-label" data-i18n="testi_label">Customer Reviews</div>
+      <h2 class="section-title">WHAT PEOPLE <span class="accent" data-i18n="testi_say">SAY</span></h2>
+      <p class="section-desc" data-i18n="testi_desc">Don't just take our word for it — hear from the builders and homeowners who trust Evenn
         Hardware.</p>
 
       <div class="testi-grid">
@@ -1990,17 +2078,17 @@
 
   <!-- CTA BANNER -->
   <div class="cta-banner">
-    <h2>READY TO BUILD YOUR DREAM?</h2>
-    <p>Visit us today or call now — we have everything you need to get started!</p>
-    <a href="tel:09102873573" class="btn btn-white">📞 Call 0910-287-3573</a>
+    <h2 data-i18n="cta_title">READY TO BUILD YOUR DREAM?</h2>
+    <p data-i18n="cta_desc">Visit us today or call now — we have everything you need to get started!</p>
+    <a href="tel:09102873573" class="btn btn-white" data-i18n="cta_btn">📞 Call 0910-287-3573</a>
   </div>
 
   <!-- CONTACT SECTION -->
   <section class="contact-section" id="contact">
     <div class="container">
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">CONTACT <span class="accent">US</span></h2>
-      <p class="section-desc">Have questions about a product or need a bulk quote? Reach out to us anytime — we're
+      <div class="section-label" data-i18n="contact_label">Get In Touch</div>
+      <h2 class="section-title">CONTACT <span class="accent" data-i18n="contact_us">US</span></h2>
+      <p class="section-desc" data-i18n="contact_desc">Have questions about a product or need a bulk quote? Reach out to us anytime — we're
         always happy to help!</p>
 
       <div class="contact-grid">
@@ -2206,6 +2294,218 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+</script>
+
+<!-- LANGUAGE SWITCHER SCRIPT -->
+<script>
+  const LANGUAGES = [
+    { code: 'en', flag: 'ENG', label: 'English' },
+    { code: 'fil', flag: '🇵🇭', label: 'Filipino' },
+    { code: 'es', flag: '🇪🇸', label: 'Español' },
+    { code: 'fr', flag: '🇫🇷', label: 'Français' },
+    { code: 'ja', flag: '🇯🇵', label: '日本語' },
+    { code: 'de', flag: '🇩🇪', label: 'Deutsch' },
+  ];
+
+  const TRANSLATIONS = {
+    en: {
+      topbar: '🔨 Now Open — Your Trusted Local Hardware Store in Tigbao, Libagon, Southern Leyte &nbsp;|&nbsp; Call: 0910-287-3573',
+      nav_home: 'Home', nav_products: 'Products', nav_about: 'About',
+      nav_services: 'Services', nav_reviews: 'Reviews', nav_contact: '📞 Contact Us',
+      hero_eyebrow: '🏗 Tigbao, Libagon, Southern Leyte',
+      hero_sub: 'Mini Hardware &amp; Hollowblocks',
+      hero_desc: 'Your trusted one-stop hardware store in Southern Leyte. Quality tools, construction materials, hollowblocks, and supplies — always available at honest prices.',
+      hero_btn_products: '🛒 View Products', hero_btn_call: '📞 Call Us Now',
+      stat_products: 'Products', stat_years: 'Years Trusted', stat_customers: 'Happy Customers', stat_support: 'Support',
+      feat_tag: '🔥 Featured', feat_title: 'THE BEST<br><span>HOLLOWBLOCKS</span><br>IN SOUTHERN LEYTE',
+      feat_desc: 'Premium quality concrete hollowblocks for all your construction needs. Strong, durable, and affordable.',
+      prod_label: 'Our Products', prod_carry: 'CARRY',
+      prod_desc: 'From construction materials to hand tools — we stock everything a builder, homeowner, or contractor needs.',
+      why_label: 'Why Choose Us', why_trust: 'TRUST',
+      why_desc: "We've been serving families and builders in Tigbao, Libagon and surrounding areas for years — and we never compromise on quality or service.",
+      svc_label: 'What We Offer', svc_title: 'SERVICES',
+      svc_desc: "We go beyond just selling products — we're your complete construction partner.",
+      testi_label: 'Customer Reviews', testi_say: 'SAY',
+      testi_desc: "Don't just take our word for it — hear from the builders and homeowners who trust Evenn Hardware.",
+      cta_title: 'READY TO BUILD YOUR DREAM?',
+      cta_desc: 'Visit us today or call now — we have everything you need to get started!',
+      cta_btn: '📞 Call 0910-287-3573',
+      contact_label: 'Get In Touch', contact_us: 'US',
+      contact_desc: "Have questions about a product or need a bulk quote? Reach out to us anytime — we're always happy to help!",
+    },
+    fil: {
+      topbar: '🔨 Bukas Na — Ang Inyong Pinagkakatiwalaang Lokal na Tindahan ng Hardware sa Tigbao, Libagon, Southern Leyte &nbsp;|&nbsp; Tawagan: 0910-287-3573',
+      nav_home: 'Tahanan', nav_products: 'Mga Produkto', nav_about: 'Tungkol Sa Amin',
+      nav_services: 'Mga Serbisyo', nav_reviews: 'Mga Review', nav_contact: '📞 Makipag-ugnayan',
+      hero_eyebrow: '🏗 Tigbao, Libagon, Southern Leyte',
+      hero_sub: 'Mini Hardware at Hollowblocks',
+      hero_desc: 'Ang inyong mapagkakatiwalaang tindahan ng hardware sa Southern Leyte. De-kalidad na kagamitan, materyales sa konstruksyon, hollowblocks, at supplies — laging available sa tamang presyo.',
+      hero_btn_products: '🛒 Tingnan ang Mga Produkto', hero_btn_call: '📞 Tumawag Ngayon',
+      stat_products: 'Mga Produkto', stat_years: 'Taon ng Tiwala', stat_customers: 'Masasayang Kostumer', stat_support: 'Suporta',
+      feat_tag: '🔥 Tampok', feat_title: 'PINAKAMAHUSAY NA<br><span>HOLLOWBLOCKS</span><br>SA SOUTHERN LEYTE',
+      feat_desc: 'Premium na kalidad na kongkretong hollowblocks para sa lahat ng inyong pangangailangan sa konstruksyon. Matibay, matibay, at abot-kaya.',
+      prod_label: 'Aming Mga Produkto', prod_carry: 'MAYROON KAMI',
+      prod_desc: 'Mula sa mga materyales sa konstruksyon hanggang sa mga kamay na kagamitan — iniimbak namin ang lahat ng kailangan ng isang manggagawa, may-ari ng bahay, o kontratista.',
+      why_label: 'Bakit Kami', why_trust: 'TIWALA',
+      why_desc: 'Naglilingkod na kami sa mga pamilya at manggagawa sa Tigbao, Libagon at mga kalapit na lugar sa maraming taon — at hindi kami kailanman nagkokompromiso sa kalidad o serbisyo.',
+      svc_label: 'Ano ang Aming Inaalok', svc_title: 'MGA SERBISYO',
+      svc_desc: 'Higit pa kami sa basta pagbebenta ng mga produkto — kami ang inyong kumpletong kasosyo sa konstruksyon.',
+      testi_label: 'Mga Review ng Kostumer', testi_say: 'SINASABI',
+      testi_desc: 'Huwag lang magtiwala sa aming salita — pakinggan ang mga manggagawa at may-ari ng bahay na nagtitiwala sa Evenn Hardware.',
+      cta_title: 'HANDA NA BANG ITAYO ANG INYONG PANGARAP?',
+      cta_desc: 'Bisitahin kami ngayon o tumawag na — mayroon kaming lahat ng kailangan ninyo upang makapagsimula!',
+      cta_btn: '📞 Tumawag sa 0910-287-3573',
+      contact_label: 'Makipag-ugnayan', contact_us: 'SA AMIN',
+      contact_desc: 'May mga tanong tungkol sa isang produkto o kailangan ng bulk na quote? Makipag-ugnayan sa amin anumang oras — lagi kaming handang tumulong!',
+    },
+    es: {
+      topbar: '🔨 Ahora Abierto — Tu Ferretería Local de Confianza en Tigbao, Libagon, Southern Leyte &nbsp;|&nbsp; Llama: 0910-287-3573',
+      nav_home: 'Inicio', nav_products: 'Productos', nav_about: 'Nosotros',
+      nav_services: 'Servicios', nav_reviews: 'Reseñas', nav_contact: '📞 Contáctanos',
+      hero_eyebrow: '🏗 Tigbao, Libagon, Southern Leyte',
+      hero_sub: 'Mini Ferretería y Bloques Huecos',
+      hero_desc: 'Tu ferretería de confianza en Southern Leyte. Herramientas de calidad, materiales de construcción, bloques huecos y suministros — siempre disponibles a precios honestos.',
+      hero_btn_products: '🛒 Ver Productos', hero_btn_call: '📞 Llámanos Ahora',
+      stat_products: 'Productos', stat_years: 'Años de Confianza', stat_customers: 'Clientes Felices', stat_support: 'Soporte',
+      feat_tag: '🔥 Destacado', feat_title: 'LOS MEJORES<br><span>BLOQUES HUECOS</span><br>EN SOUTHERN LEYTE',
+      feat_desc: 'Bloques huecos de concreto de calidad premium para todas sus necesidades de construcción. Fuertes, duraderos y económicos.',
+      prod_label: 'Nuestros Productos', prod_carry: 'TENEMOS',
+      prod_desc: 'Desde materiales de construcción hasta herramientas manuales — tenemos todo lo que un constructor, propietario o contratista necesita.',
+      why_label: '¿Por Qué Nosotros?', why_trust: 'CONFIANZA',
+      why_desc: 'Llevamos años sirviendo a familias y constructores en Tigbao, Libagon y áreas circundantes — y nunca comprometemos la calidad ni el servicio.',
+      svc_label: 'Lo Que Ofrecemos', svc_title: 'SERVICIOS',
+      svc_desc: 'Vamos más allá de vender productos — somos tu socio completo en construcción.',
+      testi_label: 'Reseñas de Clientes', testi_say: 'DICEN',
+      testi_desc: 'No solo confíes en nuestra palabra — escucha a los constructores y propietarios que confían en Evenn Hardware.',
+      cta_title: '¿LISTO PARA CONSTRUIR TU SUEÑO?',
+      cta_desc: '¡Visítanos hoy o llama ahora — tenemos todo lo que necesitas para comenzar!',
+      cta_btn: '📞 Llama al 0910-287-3573',
+      contact_label: 'Ponte en Contacto', contact_us: 'NOSOTROS',
+      contact_desc: '¿Tienes preguntas sobre un producto o necesitas una cotización al por mayor? Contáctanos en cualquier momento — ¡siempre estamos felices de ayudar!',
+    },
+    fr: {
+      topbar: '🔨 Maintenant Ouvert — Votre Quincaillerie Locale de Confiance à Tigbao, Libagon, Southern Leyte &nbsp;|&nbsp; Appelez: 0910-287-3573',
+      nav_home: 'Accueil', nav_products: 'Produits', nav_about: 'À Propos',
+      nav_services: 'Services', nav_reviews: 'Avis', nav_contact: '📞 Contactez-nous',
+      hero_eyebrow: '🏗 Tigbao, Libagon, Southern Leyte',
+      hero_sub: 'Mini Quincaillerie &amp; Parpaings',
+      hero_desc: 'Votre quincaillerie de confiance dans le Southern Leyte. Outils de qualité, matériaux de construction, parpaings et fournitures — toujours disponibles à des prix honnêtes.',
+      hero_btn_products: '🛒 Voir les Produits', hero_btn_call: '📞 Appelez Maintenant',
+      stat_products: 'Produits', stat_years: 'Ans de Confiance', stat_customers: 'Clients Satisfaits', stat_support: 'Support',
+      feat_tag: '🔥 En Vedette', feat_title: 'LES MEILLEURS<br><span>PARPAINGS</span><br>DU SOUTHERN LEYTE',
+      feat_desc: 'Parpaings en béton de qualité premium pour tous vos besoins de construction. Solides, durables et abordables.',
+      prod_label: 'Nos Produits', prod_carry: 'PROPOSONS',
+      prod_desc: 'Des matériaux de construction aux outils manuels — nous stockons tout ce dont un constructeur, propriétaire ou entrepreneur a besoin.',
+      why_label: 'Pourquoi Nous?', why_trust: 'CONFIANCE',
+      why_desc: "Nous servons les familles et les constructeurs de Tigbao, Libagon et des environs depuis des années — et nous ne faisons jamais de compromis sur la qualité ou le service.",
+      svc_label: 'Ce Que Nous Offrons', svc_title: 'SERVICES',
+      svc_desc: "Nous allons au-delà de la simple vente de produits — nous sommes votre partenaire complet en construction.",
+      testi_label: 'Avis Clients', testi_say: 'DISENT',
+      testi_desc: "Ne prenez pas seulement notre parole — écoutez les constructeurs et propriétaires qui font confiance à Evenn Hardware.",
+      cta_title: 'PRÊT À CONSTRUIRE VOTRE RÊVE?',
+      cta_desc: 'Visitez-nous aujourd\'hui ou appelez maintenant — nous avons tout ce dont vous avez besoin pour commencer!',
+      cta_btn: '📞 Appelez le 0910-287-3573',
+      contact_label: 'Prenez Contact', contact_us: 'NOUS',
+      contact_desc: "Des questions sur un produit ou besoin d'un devis en gros? Contactez-nous à tout moment — nous sommes toujours heureux d'aider!",
+    },
+    ja: {
+      topbar: '🔨 営業中 — ティグバオ、リバゴン、サザンレイテの信頼できる地元ハードウェアストア &nbsp;|&nbsp; お電話: 0910-287-3573',
+      nav_home: 'ホーム', nav_products: '商品', nav_about: '私たちについて',
+      nav_services: 'サービス', nav_reviews: 'レビュー', nav_contact: '📞 お問い合わせ',
+      hero_eyebrow: '🏗 ティグバオ、リバゴン、サザンレイテ',
+      hero_sub: 'ミニハードウェア＆ホロウブロック',
+      hero_desc: 'サザンレイテで信頼できるオールインワンのハードウェアストアです。高品質な工具、建築資材、ホロウブロック、資材 — 常に正直な価格でご提供しています。',
+      hero_btn_products: '🛒 商品を見る', hero_btn_call: '📞 今すぐ電話',
+      stat_products: '商品', stat_years: '信頼の年数', stat_customers: '満足した顧客', stat_support: 'サポート',
+      feat_tag: '🔥 注目', feat_title: 'サザンレイテで<br><span>最高品質の</span><br>ホロウブロック',
+      feat_desc: 'あらゆる建設ニーズに対応するプレミアム品質のコンクリートホロウブロック。丈夫で耐久性があり、手頃な価格です。',
+      prod_label: '当店の商品', prod_carry: '取り扱い商品',
+      prod_desc: '建築資材から手工具まで — 建設業者、家主、請負業者が必要とするすべてのものを在庫しています。',
+      why_label: '選ばれる理由', why_trust: '信頼',
+      why_desc: '私たちは何年もの間、ティグバオ、リバゴンおよびその周辺地域の家族や建設業者にサービスを提供してきました — 品質やサービスについて妥協しません。',
+      svc_label: '提供サービス', svc_title: 'サービス',
+      svc_desc: '単に商品を売るだけにとどまらず、完全な建設パートナーとしてお客様をサポートします。',
+      testi_label: '顧客レビュー', testi_say: 'の声',
+      testi_desc: '私たちの言葉だけを信じないでください — Evenn Hardwareを信頼する建設業者や家主の声をお聞きください。',
+      cta_title: '夢の建設を始める準備はできていますか？',
+      cta_desc: '今日ご来店いただくか、今すぐお電話ください — 始めるために必要なものはすべて揃っています！',
+      cta_btn: '📞 0910-287-3573に電話する',
+      contact_label: 'お問い合わせ', contact_us: '私たちへ',
+      contact_desc: '商品についてのご質問や大量注文のお見積もりが必要ですか？いつでもお気軽にお問い合わせください — 喜んでお手伝いします！',
+    },
+    de: {
+      topbar: '🔨 Jetzt Geöffnet — Ihr vertrauenswürdiges lokales Eisenwarengeschäft in Tigbao, Libagon, Southern Leyte &nbsp;|&nbsp; Anruf: 0910-287-3573',
+      nav_home: 'Startseite', nav_products: 'Produkte', nav_about: 'Über Uns',
+      nav_services: 'Dienste', nav_reviews: 'Bewertungen', nav_contact: '📞 Kontakt',
+      hero_eyebrow: '🏗 Tigbao, Libagon, Southern Leyte',
+      hero_sub: 'Mini Eisenwarengeschäft &amp; Hohlblöcke',
+      hero_desc: 'Ihr vertrauenswürdiges Eisenwarengeschäft in Southern Leyte. Hochwertige Werkzeuge, Baumaterialien, Hohlblöcke und Zubehör — immer zu fairen Preisen erhältlich.',
+      hero_btn_products: '🛒 Produkte Ansehen', hero_btn_call: '📞 Jetzt Anrufen',
+      stat_products: 'Produkte', stat_years: 'Jahre Vertrauen', stat_customers: 'Zufriedene Kunden', stat_support: 'Support',
+      feat_tag: '🔥 Empfohlen', feat_title: 'DIE BESTEN<br><span>HOHLBLÖCKE</span><br>IN SOUTHERN LEYTE',
+      feat_desc: 'Hochwertige Betonhohlblöcke für all Ihre Bauprojekte. Stark, langlebig und erschwinglich.',
+      prod_label: 'Unsere Produkte', prod_carry: 'SORTIMENT',
+      prod_desc: 'Von Baumaterialien bis hin zu Handwerkzeugen — wir führen alles, was ein Bauherr, Hausbesitzer oder Auftragnehmer benötigt.',
+      why_label: 'Warum Wir?', why_trust: 'VERTRAUEN',
+      why_desc: 'Wir bedienen seit Jahren Familien und Bauherren in Tigbao, Libagon und den umliegenden Gebieten — und wir machen niemals Kompromisse bei Qualität oder Service.',
+      svc_label: 'Was Wir Anbieten', svc_title: 'DIENSTE',
+      svc_desc: 'Wir gehen über das reine Verkaufen von Produkten hinaus — wir sind Ihr kompletter Baupartner.',
+      testi_label: 'Kundenbewertungen', testi_say: 'SAGEN',
+      testi_desc: 'Verlassen Sie sich nicht nur auf unser Wort — hören Sie von den Bauherren und Hausbesitzern, die Evenn Hardware vertrauen.',
+      cta_title: 'BEREIT, IHREN TRAUM ZU BAUEN?',
+      cta_desc: 'Besuchen Sie uns noch heute oder rufen Sie jetzt an — wir haben alles, was Sie für den Einstieg benötigen!',
+      cta_btn: '📞 Anrufen 0910-287-3573',
+      contact_label: 'Kontakt Aufnehmen', contact_us: 'UNS',
+      contact_desc: 'Haben Sie Fragen zu einem Produkt oder benötigen Sie ein Großbestellungsangebot? Wenden Sie sich jederzeit an uns — wir helfen immer gerne!',
+    },
+  };
+
+  let currentLangIndex = 0;
+
+  function buildDots() {
+    const dotsContainer = document.getElementById('langDots');
+    dotsContainer.innerHTML = '';
+    LANGUAGES.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'lang-dot' + (i === currentLangIndex ? ' active' : '');
+      dot.title = LANGUAGES[i].label;
+      dot.onclick = () => { currentLangIndex = i; applyLang(); };
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function applyLang() {
+    const lang = LANGUAGES[currentLangIndex];
+    const t = TRANSLATIONS[lang.code];
+
+    // Update button
+    document.getElementById('langFlag').textContent = lang.flag;
+    document.getElementById('langLabel').textContent = lang.label;
+
+    // Fade all translatable elements
+    const els = document.querySelectorAll('[data-i18n]');
+    els.forEach(el => el.classList.add('lang-fade'));
+
+    setTimeout(() => {
+      els.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+          el.innerHTML = t[key];
+        }
+        el.classList.remove('lang-fade');
+      });
+    }, 200);
+
+    buildDots();
+  }
+
+  function cycleLang() {
+    currentLangIndex = (currentLangIndex + 1) % LANGUAGES.length;
+    applyLang();
+  }
+
+  // Init dots
+  buildDots();
 </script>
 
 </body>
